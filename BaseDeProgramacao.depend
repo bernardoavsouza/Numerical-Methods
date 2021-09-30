@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1530555701 source:c:\users\noudy\google drive\cefet\2017.2\cálculo numérico\programa final\main.cpp
+	<iostream>
+	"matriz.h"
+	"minhabiblioteca.h"
+	"minhasfuncoes.h"
+
+1516233676 c:\users\noudy\google drive\cefet\2017.2\cálculo numérico\programa final\matriz.h
+	<cassert>
+	<cstdlib>
+	<iostream>
+	<cmath>
+	<iomanip>
+	<stdio.h>
+	<string>
+
+1530554423 c:\users\noudy\google drive\cefet\2017.2\cálculo numérico\programa final\minhabiblioteca.h
+	<cassert>
+	<cstdlib>
+	"matriz.h"
+
+1516233677 c:\users\noudy\google drive\cefet\2017.2\cálculo numérico\programa final\minhasfuncoes.h
+	"matriz.h"
+
+1516233676 source:c:\users\noudy\google drive\cefet\2017.2\cálculo numérico\programa final\matriz.cpp
+	"matriz.h"
+
+1530555127 source:c:\users\noudy\google drive\cefet\2017.2\cálculo numérico\programa final\minhabiblioteca.cpp
+	<iostream>
+	"minhabiblioteca.h"
+	"matriz.h"
+	"minhasfuncoes.h"
+	<math.h>
+
+1530555680 source:c:\users\noudy\google drive\cefet\2017.2\cálculo numérico\programa final\minhasfuncoes.cpp
+	"minhasfuncoes.h"
+

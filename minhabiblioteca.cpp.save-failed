@@ -1,0 +1,324 @@
+// Arquivo .cpp: é o arquivo onde iremos programar as funções que desejamos.
+// Sempre, antes de rodar o programa, precisamos declarar o protótipo
+// de cada função no arquivo .h (header ou cabeçalho), que funciona como
+// um sumário das funções disponíveis na biblioteca
+
+
+// inclusão do cabeçalho que aponta para esse arquivo
+#include <iostream>
+using namespace std;
+
+# include "minhabiblioteca.h"
+# include "matriz.h"
+# include "minhasfuncoes.h"
+# include <math.h>
+// .
+// .
+// .
+// .
+// .
+// A TUA PROGRAMAÇÃO DEVE FICAR DEPOIS DESSA MENSAGEM. DEIXE 5 LINHAS ACIMA SEM PROGRAMAÇÃO
+// ========================================================================================
+
+
+// LISTA DE FUNÇÕES A SEREM CRIADAS:
+
+// Valores máximo e mínimo de um vetor
+// Valores máximo e mínimo de uma matriz
+
+// média dos valores de um vetor
+// média dos valores de uma matriz
+
+
+// Soma de matrizes     Matriz SOMA(Matriz A, Matriz B);
+// Soma de vetores      a função de cima deve já servir;
+
+
+// Multiplicação de matrizes
+// produto interno entre vetores
+// produto vetorial entre vetores
+// mutiplicação de matriz por vetor
+// transposição de vetores e matrizes
+// Copiar uma linha de uma matriz para um vetor
+// copiar uma coluna de uma matriz para um vetor
+
+
+// Cria uma matriz identidade
+void Identidade (Matriz &ID)
+
+{
+
+    int L, C, i;
+
+        L = ID.dim('l');
+        C = ID.dim('c');
+
+   //Conferindo se a matriz é quadrada
+
+   if(L!=C)
+   {
+       cout << "A matriz nao e quadrada. Abortando...";
+       abort();
+   }
+
+   for(i=0;i<L;i++)
+   {
+        ID.entrada(i,i,1);
+
+   }
+}
+
+    // basta criar uma matriz toda zerada e trocar toda a diagonal por 1
+    // deve retornar uma matriz
+
+
+// Copia a Matriz A para a matriz B.
+void Copia (Matriz &A , Matriz &B)
+{
+    // precisa checar se linhas e colunas são iguais
+    // Não retorna nenhuma matriz
+
+    int LA, LB, CA, CB, i, j;
+
+    //Descobre o número de linhas e colunas das matrizes
+
+    LA=A.dim('l');
+    LB=B.dim('l');
+    CA=A.dim('c');
+    CB=B.dim('c');
+
+    if (LA!=LB || CA!=CB)
+    {
+        cout << "As matrizes não tem dimensões iguais. Abortando...";
+        abort();
+    }
+    for(i=0;i<LA;i++)
+    {
+        for(j=0;j<CA;j++)
+        {
+            B.entrada(i,j,A.saida(i,j));
+        }
+    }
+}
+
+
+void SOMA(Matriz &A , Matriz &B, Matriz &C)
+{
+     int LA, LB, CA, CB, i, j, LC, CC;
+
+    // Checar se as dimensões de A e B são Iguais
+    // Criar uma nova Matriz onde cada elemento resulta da soma de cada elemento correspondente nas matrizes
+    // deve retornar uma matriz
+
+    //Descobre o número de linhas e colunas das matrizes
+
+    LA=A.dim('l');
+    LB=B.dim('l');
+    LC=C.dim('l');
+    CA=A.dim('c');
+    CB=B.dim('c');
+    CC=C.dim('c');
+
+    if (LA!=LB || CA!=CB)
+    {
+        cout << "As matrizes não tem dimensões iguais. Abortando...";
+        abort();
+    }
+
+    for(i=0;i<LA;i++)
+    {
+        for(j=0;j<CA;j++)
+        {
+        C.entrada(i,j,A.saida(i,j)+ B.saida(i,j));
+        }
+
+    }
+}
+
+
+void SUBTRAI(Matriz &A , Matriz &B, Matriz &C)
+{
+     int LA, LB, CA, CB, i, j, LC, CC;
+
+    // Checar se as dimensões de A e B são Iguais
+    // Criar uma nova Matriz onde cada elemento resulta da soma de cada elemento correspondente nas matrizes
+    // deve retornar uma matriz
+
+    //Descobre o número de linhas e colunas das matrizes
+
+    LA=A.dim('l');
+    LB=B.dim('l');
+    LC=C.dim('l');
+    CA=A.dim('c');
+    CB=B.dim('c');
+    CC=C.dim('c');
+
+    if (LA!=LB || CA!=CB)
+    {
+        cout << "As matrizes não tem dimensões iguais. Abortando...";
+        abort();
+    }
+
+    for(i=0;i<LA;i++)
+    {
+        for(j=0;j<CA;j++)
+        {
+        C.entrada(i,j,A.saida(i,j)- B.saida(i,j));
+        }
+
+    }
+}
+
+
+void MULTIPLICA(Matriz &A , Matriz &B , Matriz &C )
+{
+    // Checar se as dimensões SÃO COMPATÍVEIS
+    int LA, CA, LB, CB, LC, CC;
+
+    LA = A.dim('l');
+    CA = A.dim('c');
+
+    LB = B.dim('l');
+    CB = B.dim('c');
+
+    LC = C.dim('l');
+    CC = C.dim('c');
+
+    if ((CA!=LB) || (LC!=LA) || (CC!=CB))
+    {
+        cout << "Inconsistencia nas dimensoes das matrizes. Funcao, MULTIPLICA. Abortando...";
+        abort();
+    }
+
+    int i,j,k;
+    double somatorio;
+
+    for (i=0;i<LA;i++)
+    {
+
+        for (j=0;j<CB;j++)
+        {
+            somatorio=0;
+            for (k=0;k<CA;k++)
+            {
+                somatorio=somatorio+ A.saida(i,k)*B.saida(k,j);
+
+            }
+
+            C.entrada(i,j,somatorio);
+        }
+    }
+}
+
+Matriz TRANSPOSTA(Matriz &A)
+{
+    // deve retornar uma matriz
+}
+
+
+
+double e2xTAYLOR (double x , double n)
+{
+    //SÉRIE DE tAYLOR DA FUNÇÃO e^{-2x}
+    // N NAO PODE SER NEGATIVO
+
+   if (n<=0 || floor(n)!= ceil(n))
+
+   {
+      cout << "Valor invalido de termos. Funcao e2xTAYLOR Abortando...";
+      abort();
+   }
+
+   double i;
+   double somat = 0;
+
+   for (i=0; i<=n; i++)
+
+   {
+       somat = somat + ((pow(-2,i))/(fatorial(i)))*pow(x,i);
+   }
+
+   return somat;
+
+}
+
+double eaxTAYLOR (double x, double x0, double a, double n)
+{
+    if(a>=0)
+    {
+        cout << "\nValor invalido de a. Funcao eaxTAYLOR. Abortando...";
+        abort();
+    }
+    if(n>30)
+    {
+        cout << "\nValor de n excedeu o limite. Funcao eaxTAYLOR. Abortando...\n";
+        abort();
+    }
+    if(1>=n)
+    {
+        cout << "\nValor de invalido de n. Funcao eaxTAYLOR. Abortando...\n";
+        abort();
+    }
+    int i;
+    double somatorio = exp(a*x0);
+
+    for(i=1; i<=n ; i++)
+    {
+        somatorio=somatorio+ (pow(a,i)*exp(a*x0)*pow(x-x0,i))/fatorial(i);
+
+    }
+
+    return somatorio;
+}
+double lnxTAYLOR (double x, double x0, double n)
+{
+
+    if(x0<=0)
+    {
+        cout << "\nValor invalido de x0. Funcao lnxTAYLOR. Abortando...\n";
+        abort();
+    }
+    if(n>30)
+    {
+        cout << "\nValor de n excedeu o limite. Funcao lnxTAYLOR. Abortando...\n";
+        abort();
+    }
+    if(1>=n)
+    {
+        cout << "\nValor de invalido de n. Funcao lnxTAYLOR. Abortando...\n";
+        abort();
+    }
+    int i;
+    double somatorio = log(x0);
+
+    for(i=1; i<=n ; i++)
+    {
+        somatorio=somatorio+ (pow(-1,i+1))*pow(x-x0,i)/(i*pow(x0,i));
+    }
+
+    return somatorio;
+}
+
+// Transposição de Matriz
+
+
+// ========================================================================================
+// A TUA PROGRAMAÇÃO DEVE FICAR ANTES DESSA MENSAGEM. DEIXE 5 LINHAS ABAIXO SEM PROGRAMAÇÃO
+// .
+// .
+// .
+// .
+// .
+
+// Função de teste. mantenha essa função no fim do arquivo. Não a apague.
+// apenas programa acima dela.
+void TesteDeFuncaoComCabecalho (void)
+{
+    // o protótipo da função foi declarada no arquivo .h (header)
+    // nesse arquivo (.cpp) é onde iremos realizar a programação do que
+    // queremos que a função faça. Nessa função de teste, ela irá apenas
+    // imprimir um pequeno texto na tela.
+
+    cout << "Esta e uma funcao de teste." << endl;
+}
+
