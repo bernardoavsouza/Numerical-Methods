@@ -85,7 +85,7 @@ void SOMA(Matriz &A , Matriz &B, Matriz &C)
 
     if (LA!=LB || CA!=CB)
     {
-        cout << "As matrizes n�o tem dimens�es iguais. Abortando...";
+        cout << "As matrizes não tem dimensões iguais. Abortando...";
         abort();
     }
 
