@@ -1,6 +1,6 @@
 # Numerical-Methods
 These are some algorithms for troubleshooting mathematics.
-The whole code is commented in portuguese and it was done in 2017.
+The whole code is commented in portuguese and it was done in 2017 on CodeBlocks IDE.
 
 
 This project was coded based on a class called Matriz (that is Matrix) developed by Dr. Daniel Gomes Ribeiro.
