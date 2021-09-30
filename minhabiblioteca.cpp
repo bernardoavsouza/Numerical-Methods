@@ -116,7 +116,7 @@ void SUBTRAI(Matriz &A , Matriz &B, Matriz &C)
 
     if (LA!=LB || CA!=CB)
     {
-        cout << "As matrizes n�o tem dimens�es iguais. Abortando...";
+        cout << "As matrizes não tem dimensões iguais. Abortando...";
         abort();
     }
 
@@ -176,7 +176,7 @@ void TRANSPOSTA (Matriz &A, Matriz &B)
 {
     if(A.dim('l')!= B.dim('c') || A.dim('c')!= B.dim('l'))
     {
-        cout << "Erro de dimens�o de matriz. Algoritmo TRANSPOSTA. Abortando...";
+        cout << "Erro de dimensão de matriz. Algoritmo TRANSPOSTA. Abortando...";
         abort();
     }
     int i,j;
@@ -194,9 +194,7 @@ void TRANSPOSTA (Matriz &A, Matriz &B)
 
 // Série de Taylor da função e^(-2x)
 double e2xTAYLOR (double x , double n)
-{
-    //S�RIE DE tAYLOR DA FUN��O e^{-2x}
-    
+{    
 
    if (n<=1 || floor(n)!= ceil(n))
 
@@ -218,7 +216,7 @@ double e2xTAYLOR (double x , double n)
 
 }
 
-
+// Série de Taylor da função e^(-ax)
 double eaxTAYLOR (double x, double x0, double a, double n)
 {
      if (n<=1 || floor(n)!= ceil(n))
