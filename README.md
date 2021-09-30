@@ -1,6 +1,6 @@
 # Numerical-Methods
 These are some algorithms for troubleshooting mathematics.
-The whole code are commented in portuguese and was done in 2017.
+The whole code is commented in portuguese and it was done in 2017.
 
 
 This project was coded based on a class called Matriz (that is Matrix) developed by Dr. Daniel Gomes Ribeiro.
