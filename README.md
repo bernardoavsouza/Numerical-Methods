@@ -6,6 +6,7 @@ The whole code is commented in portuguese and it was done in 2017 on CodeBlocks 
 This repository was coded based on a class called Matriz (that is Matrix) developed by Dr. Daniel Gomes Ribeiro.
 
 The repository is separated by 6 main files: 
+
         BaseDeProgramacao.cbp   --> The project file that contains the following files
         minhabiblioteca.h       --> The header of the library created
         minhasfuncoes.h         --> The header of the used functions
